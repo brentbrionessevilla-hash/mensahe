@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
@@ -26,7 +26,7 @@
                         <input type="password" id="password-input" name="password" required placeholder="January 21, 2026, 7:59 PM" />
                         <button type="submit">Submit</button>
                     </div>
-                    <div id="submit-loading" class="loading" style="display:none;">⏳ Verifying…</div>
+                    <div id="submit-loading" class="loading" style="display:none;">Verifying…</div>
                 </form>
             </section>
             <div id="error-modal" class="modal" style="display:none;">
@@ -35,12 +35,7 @@
                     <button id="modal-close">OK</button>
                 </div>
             </div>
-            <section class="message-box" id="message-section" style="display:none;">
-                <p id="message-content">Good evening, Shie. How have you been? I hope you’re happy with what you’re doing now, even without me. I believe you can handle everything for your future, and I’m truly happy knowing that you’ll achieve the things you want in life.</p>
-                <p id="message-content">I’m sorry that I disappeared. It was just really hard for me to face the things I wasn’t ready to see. I’m sincerely sorry.</p>
-                <p id="message-content">Now, about the main topic. Please be careful with your surroundings, especially with the faculty. I’m not trying to pressure you or make you uncomfortable in any way. I just care about you and want you to stay aware and safe. Don’t worry. As long as I see clear and honest proof, everything will be okay on your side. Just continue doing what you are currently doing.</p>
-                <p id="message-content">Please keep this message between us. No one else needs to know. Trust me on this, and don’t worry about me. I’m okay, I’m strong, and I’ll be fine.</p>
-            </section>
+            <section class="message-box" id="message-section" style="display:none;" data-msg="ICAgICAgICAgICAgICAgIDxwIGlkPSJtZXNzYWdlLWNvbnRlbnQiPkdvb2QgZXZlbmluZywgU2hpZS4gSG93IGhhdmUgeW91IGJlZW4/IEkgaG9wZSB5b3UncmUgaGFwcHkgd2l0aCB3aGF0IHlvdSdyZSBkb2luZyBub3csIGV2ZW4gd2l0aG91dCBtZS4gSSBiZWxpZXZlIHlvdSBjYW4gaGFuZGxlIGV2ZXJ5dGhpbmcgZm9yIHlvdXIgZnV0dXJlLCBhbmQgSSdtIHRydWx5IGhhcHB5IGtub3dpbmcgdGhhdCB5b3UnbGwgYWNoaWV2ZSB0aGUgdGhpbmdzIHlvdSB3YW50IGluIGxpZmUuPC9wPgogICAgICAgICAgICAgICAgPHAgaWQ9Im1lc3NhZ2UtY29udGVudCI+SSdtIHNvcnJ5IHRoYXQgSSBkaXNhcHBlYXJlZC4gSXQgd2FzIGp1c3QgcmVhbGx5IGhhcmQgZm9yIG1lIHRvIGZhY2UgdGhlIHRoaW5ncyBJIHdhc24ndCByZWFkeSB0byBzZWUuIEknbSBzaW5jZXJlbHkgc29ycnkuPC9wPgogICAgICAgICAgICAgICAgPHAgaWQ9Im1lc3NhZ2UtY29udGVudCI+Tm93LCBhYm91dCB0aGUgbWFpbiB0b3BpYy4gUGxlYXNlIGJlIGNhcmVmdWwgd2l0aCB5b3VyIHN1cnJvdW5kaW5ncywgZXNwZWNpYWxseSB3aXRoIHRoZSBmYWN1bHR5LiBJJ20gbm90IHRyeWluZyB0byBwcmVzc3VyZSB5b3Ugb3IgbWFrZSB5b3UgdW5jb21mb3J0YWJsZSBpbiBhbnkgd2F5LiBJIGp1c3QgY2FyZSBhYm91dCB5b3UgYW5kIHdhbnQgeW91IHRvIHN0YXkgYXdhcmUgYW5kIHNhZmUuIERvbid0IHdvcnJ5LiBBcyBsb25nIGFzIEkgc2VlIGNsZWFyIGFuZCBob25lc3QgcHJvb2YsIGV2ZXJ5dGhpbmcgd2lsbCBiZSBva2F5IG9uIHlvdXIgc2lkZS4gSnVzdCBjb250aW51ZSBkb2luZyB3aGF0IHlvdSBhcmUgY3VycmVudGx5IGRvaW5nLjwvcD4KICAgICAgICAgICAgICAgIDxwIGlkPSJtZXNzYWdlLWNvbnRlbnQiPlBsZWFzZSBrZWVwIHRoaXMgbWVzc2FnZSBiZXR3ZWVuIHVzLiBObyBvbmUgZWxzZSBuZWVkcyB0byBrbm93LiBUcnVzdCBtZSBvbiB0aGlzLCBhbmQgZG9uJ3Qgd29ycnkgYWJvdXQgbWUuIEknbSBva2F5LCBJJ20gc3Ryb25nLCBhbmQgSSdsbCBiZSBmaW5lLjwvcD4="></section>
             <p id="time-notice" style="display:none; text-align:center; margin-top:1rem; color:#555;"></p>
         </main>
 
@@ -48,6 +43,19 @@
             <small>Created by Brent Sevilla</small>
         </footer>
     </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const section = document.getElementById('message-section');
+            const encoded = section.getAttribute('data-msg');
+            if (encoded) {
+                try {
+                    section.innerHTML = atob(encoded);
+                } catch (e) {
+                    console.error('Failed to decode message');
+                }
+            }
+        });
+    </script>
     <script src="script.js"></script>
 </body>
 </html>
