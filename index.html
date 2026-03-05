@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mensahe</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+    <div class="container">
+        <header class="page-header">
+            <h1>Mensahe</h1>
+            <p class="subtitle">This message is meant only for you, Shierlyn.</p>
+        </header>
+
+
+        <div id="schedule-info" class="schedule-info">
+            <span id="schedule-show">Visible from ?</span>
+            <span id="schedule-expire">until ?</span>
+        </div>
+
+        <main>
+            <section class="auth-box" id="auth-box">
+                <form id="password-form">
+                    <div id="form-fields">
+                        <input type="password" id="password-input" name="password" required placeholder="January 21, 2026, 7:59 PM" />
+                        <button type="submit">Submit</button>
+                    </div>
+                    <div id="submit-loading" class="loading" style="display:none;">⏳ Verifying…</div>
+                </form>
+            </section>
+            <div id="error-modal" class="modal" style="display:none;">
+                <div class="modal-content">
+                    <p>Please check the message you sent me on Messenger. January 21, 2026, 7:59 PM</p>
+                    <button id="modal-close">OK</button>
+                </div>
+            </div>
+            <section class="message-box" id="message-section" style="display:none;">
+                <p id="message-content">Good evening, Shie. How have you been? I hope you’re happy with what you’re doing now, even without me. I believe you can handle everything for your future, and I’m truly happy knowing that you’ll achieve the things you want in life.</p>
+                <p id="message-content">I’m sorry that I disappeared. It was just really hard for me to face the things I wasn’t ready to see. I’m sincerely sorry.</p>
+                <p id="message-content">Now, about the main topic. Please be careful with your surroundings, especially with the faculty. I’m not trying to pressure you or make you uncomfortable in any way. I just care about you and want you to stay aware and safe. Don’t worry. As long as I see clear and honest proof, everything will be okay on your side. Just continue doing what you are currently doing.</p>
+                <p id="message-content">Please keep this message between us. No one else needs to know. Trust me on this, and don’t worry about me. I’m okay, I’m strong, and I’ll be fine.</p>
+            </section>
+            <p id="time-notice" style="display:none; text-align:center; margin-top:1rem; color:#555;"></p>
+        </main>
+
+        <footer class="page-footer" style="text-align:center; margin-top:2rem; color:#888;">
+            <small>Created by Brent Sevilla</small>
+        </footer>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
