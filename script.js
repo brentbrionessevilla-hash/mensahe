@@ -1,7 +1,7 @@
 
 const PASSWORD_HASH = '913a526d41bda0c248cc70a6a7fbb34d3236a2baa011313556a633a82e76997e';
-let TARGET_DATETIME = 'Mar 6 22:00:00 2026'; 
-let EXPIRATION = 'Mar 7 04:00:00 2026';
+let TARGET_DATETIME = 'Feb 22 22:00:00 2026'; 
+let EXPIRATION = 'Mar 8 18:00:00 2026';
 let previousTarget = TARGET_DATETIME; 
 
 async function hashString(str) {
